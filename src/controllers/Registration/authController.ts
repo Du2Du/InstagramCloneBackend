@@ -1,6 +1,6 @@
 import express from "express";
-import { generateToken } from "src/help";
-import { User } from "../../models/user";
+import { User } from "../../models";
+import { generateToken } from "../../help";
 
 const router = express.Router();
 

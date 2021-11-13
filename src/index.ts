@@ -1,6 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
-import { initUserAuthenticate, initUserController } from "./controllers";
+import {
+  initProjectController,
+  initUserAuthenticate,
+  initUserController,
+} from "./controllers";
 
 mongoose.connect(
   "mongodb+srv://Du2Du:1234561@cluster0.ttxfr.mongodb.net/instagramclone?retryWrites=true&w=majority"
@@ -24,6 +28,7 @@ app.get("/", (req, res) => {
 
 initUserController(app);
 initUserAuthenticate(app);
+initProjectController(app);
 
 app.listen(port, () => {
   console.log("Funcionando na porta ", port);
