@@ -7,7 +7,7 @@ import {
 } from "./controllers";
 
 mongoose.connect(
-  "mongodb+srv://Du2Du:1234561@cluster0.ttxfr.mongodb.net/instagramclone?retryWrites=true&w=majority"
+  "mongodb+srv://Du2Du:<password>@cluster0.ttxfr.mongodb.net/instagramclone?retryWrites=true&w=majority"
 );
 
 mongoose.connection.on("connected", () => {
@@ -31,5 +31,5 @@ initUserAuthenticate(app);
 initProjectController(app);
 
 app.listen(port, () => {
-  console.log("Funcionando na porta ", port);
+  console.log("Funcionando na porta", port);
 });
