@@ -7,9 +7,7 @@ import {
 } from "./controllers";
 require("dotenv").config();
 
-mongoose.connect(
-  `mongodb+srv://Du2Du:${process.env.BANK_PASSWORD}@cluster0.ttxfr.mongodb.net/instagramclone?retryWrites=true&w=majority`
-);
+mongoose.connect(process.env.BANK_URL);
 
 mongoose.connection.on("connected", () => {
   console.log("Conectado com sucesso!");
