@@ -5,16 +5,17 @@ import {
   initUserAuthenticate,
   initUserController,
 } from "./controllers";
+require("dotenv").config();
 
 mongoose.connect(
-  "mongodb+srv://Du2Du:<password>@cluster0.ttxfr.mongodb.net/instagramclone?retryWrites=true&w=majority"
+  `mongodb+srv://Du2Du:${process.env.BANK_PASSWORD}@cluster0.ttxfr.mongodb.net/instagramclone?retryWrites=true&w=majority`
 );
 
 mongoose.connection.on("connected", () => {
-  console.log("Bon jur");
+  console.log("Conectado com sucesso!");
 });
 mongoose.connection.on("error", () => {
-  console.log("Boa noia");
+  console.log("Desconectado!");
 });
 
 const app = express();
