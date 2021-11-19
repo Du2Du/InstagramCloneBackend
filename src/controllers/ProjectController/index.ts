@@ -10,9 +10,7 @@ declare global {
 
 const router = express.Router();
 
-router.use(tokenValidation);
-
-router.get("/", (req, res) => {
+router.get("/", tokenValidation, (req, res) => {
   res.send({ ok: true, user: req.userId });
 });
 
