@@ -5,6 +5,7 @@ import {
   initUserAuthenticate,
   initUserController,
 } from "./controllers";
+import cors from "cors";
 require("dotenv").config();
 
 mongoose.connect(process.env.BANK_URL);
@@ -20,6 +21,7 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Dale");
